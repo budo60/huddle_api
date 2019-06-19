@@ -1,0 +1,3 @@
+rootProject.name = 'zigbee'
+
+include ':app'
