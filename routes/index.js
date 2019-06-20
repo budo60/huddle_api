@@ -16,7 +16,9 @@ routes.use('/event', event);
 
 //routes.use('/getData', data);
 
-
+app.post('/', function (req, res) {
+    res.send('POST request to the homepage');
+});
 
 routes.get('/',(req, res) =>{
     res.status(200).json({message : 'connected!'});
