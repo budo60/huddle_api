@@ -4,6 +4,7 @@ const routes = require('express').Router();
 const connexion = require('./connectApp');
 const signup = require('./signup');
 const signup_bis = require('./signup_bis');
+const event = require('./event');
 
 
 //routes.use('/saveMove', move);
@@ -11,6 +12,7 @@ const signup_bis = require('./signup_bis');
 routes.use('/connectApp', connexion);
 routes.use('/signup', signup);
 routes.use('/signup_bis', signup_bis);
+routes.use('/event', event);
 
 //routes.use('/getData', data);
 
