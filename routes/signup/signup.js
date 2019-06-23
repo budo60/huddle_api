@@ -17,9 +17,9 @@ const signup = (mail,pass,username) => {
 }
 
 module.exports = (req, res) => {
-    var mail = req.params.mail,
-    pass = req.params.pass,
-    username = req.params.username;
+    var mail = req.body.mail,
+    pass = req.body.pass,
+    username = req.body.username;
 
     //console.log(connectApp(login,pass))
     res.send(signup(mail,pass,username))

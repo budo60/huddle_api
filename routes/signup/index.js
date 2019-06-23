@@ -2,7 +2,7 @@ const data = require('express').Router();
 const signup = require('./signup');
 
 
-data.get('/:mail/:pass/:username', signup);
+data.post('/', signup);
 
 
 
