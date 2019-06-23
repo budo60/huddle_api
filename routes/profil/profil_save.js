@@ -13,7 +13,7 @@ const profil_save = (id,address,phonenumber) => {
     })
     .catch(function(error) {
         console.log("Update failed: " + error.message)
-    });;
+    });
 }
 
 module.exports = (req, res) => {

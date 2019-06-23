@@ -5,14 +5,20 @@ const db = require('../../firebaseConfig');
 
 const event_e = (id,name,desc,max,address,date,stuff) => {
     db.auth()
-    db.database().ref('events/' + id).push({
+    db.database().ref('events/' + id).update({
         eventName: name,
         eventDesc: desc,
         eventMaxPeople: max,
         eventAdress: address,
         eventDate: date,
         eventStuff: stuff
+    }).then(function() {
+        console.log("Update succeeded.")
+    })
+    .catch(function(error) {
+        console.log("Update failed: " + error.message)
     });
+
 }
 
 module.exports = (req, res) => {
