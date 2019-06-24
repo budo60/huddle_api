@@ -3,7 +3,7 @@ const db = require('../../firebaseConfig');
 //console.log(db, 'ddbb');
 
 
-const log = (login,pass) => {
+const log = async (login,pass) => {
     //console.log("bla");
     //let result="pouet";
     db
@@ -11,7 +11,7 @@ const log = (login,pass) => {
     .signInWithEmailAndPassword(login, pass)
     .catch( error => console.log(error.message))
     //console.log(db.auth().currentUser)
-    return db.auth().currentUser
+    return  await db.auth().currentUser
 }
 
 module.exports = (req, res) => {
