@@ -17,7 +17,7 @@ const event_d = (idEvent) => {
 }
 
 module.exports = (req, res) => {
-    var idEvent = req.body.idEvent
+    var idEvent = req.params.event_id
     
 
     //console.log(connectApp(login,pass))

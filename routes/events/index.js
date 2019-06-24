@@ -5,8 +5,8 @@ const event_e = require('./event_e');
 
 
 data.post('/add', event);
-data.post('/delete', event_d);
-data.post('/edit', event_e);
+data.delete(':event_id/delete', event_d);
+data.put(':event_id/save/', event_e);
 
 
 

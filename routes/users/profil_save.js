@@ -17,7 +17,7 @@ const profil_save = (id,address,phonenumber) => {
 }
 
 module.exports = (req, res) => {
-    var id = req.body.id,
+    var id = req.params.idU,
     address = req.body.address,
     phonenumber = req.body.phonenumber;
 

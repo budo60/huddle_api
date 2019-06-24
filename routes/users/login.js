@@ -15,8 +15,8 @@ const login = (login,pass) => {
 }
 
 module.exports = (req, res) => {
-    var identifiant = req.body.identifiant,
-    pass = req.body.pass;
+    var identifiant = req.body.login,
+    pass = req.body.password;
 
     //console.log(connectApp(login,pass))
     res.send(login(identifiant,pass))

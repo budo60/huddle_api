@@ -22,7 +22,7 @@ const event_e = (id,name,desc,max,address,date,stuff) => {
 }
 
 module.exports = (req, res) => {
-    var owner = req.body.id,
+    var id = req.params.event_id,
     name = req.body.name,
     desc = req.body.desc,
     max = req.body.max,
@@ -31,5 +31,5 @@ module.exports = (req, res) => {
     stuff = req.body.stuff;
 
     //console.log(connectApp(login,pass))
-    res.send(event_e(owner,name,desc,max,address,date,stuff))
+    res.send(event_e(id,name,desc,max,address,date,stuff))
  };
