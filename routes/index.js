@@ -1,24 +1,21 @@
 const routes = require('express').Router();
 //const move = require('./saveMove');
 //const data = require('./getData');
-const connexion = require('./connectApp');
-const signup = require('./signup');
-const signup_bis = require('./signup_bis');
+const user = require('./user');
 const event = require('./event');
 const profil = require('./profil');
 
 
 //routes.use('/saveMove', move);
 //routes.use('/getData', data);
-routes.use('/connectApp', connexion);
-routes.use('/signup', signup);
-routes.use('/signup_bis', signup_bis);
+
+routes.use('/user', user);
 routes.use('/event', event);
 routes.use('/profil', profil);
 
 //routes.use('/getData', data);
 
-app.post('/', function (req, res) {
+routes.post('/', function (req, res) {
     res.send('POST request to the homepage');
 })
 
