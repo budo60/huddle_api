@@ -3,7 +3,7 @@ const db = require('../../firebaseConfig');
 //console.log(db, 'ddbb');
 
 
-const login = (login,pass) => {
+const log = (login,pass) => {
     //console.log("bla");
     //let result="pouet";
     db
@@ -19,5 +19,5 @@ module.exports = (req, res) => {
     pass = req.body.password;
 
     //console.log(connectApp(login,pass))
-    res.send(login(login,pass))
+    res.send(log(login,pass))
  };
