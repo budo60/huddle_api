@@ -1,7 +1,7 @@
 const firebase = require('firebase');
 
 const config = {
-    apiKey: "AIzaSyDuvHAGO0jZCq-_5zjoidJkPW9bvDa0pic",
+    apiKey: "######################",
     authDomain: "huddle-svs.firebaseapp.com",
     databaseURL: "https://huddle-svs.firebaseio.com",
     projectId: "huddle-svs",
