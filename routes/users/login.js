@@ -1,16 +1,6 @@
 const firebase = require('firebase');
 const db = require('../../firebaseConfig');
-//console.log(db, 'ddbb');
 
-
-// const log = (login,pass) => {
-//     db
-//     .auth()
-//     .signInWithEmailAndPassword(login, pass)
-//     //.then(() => {  })
-//     .catch( error => console.log(error.message))
-//     return db.auth().currentUser.uid;
-// }
 
 async function log (login,pass){
     try{

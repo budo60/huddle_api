@@ -5,7 +5,7 @@ const db = require('../../firebaseConfig');
 
 const addInfo = (id,address,date) => {
     const userId = id;
-    db.database().ref('user/' + userId).set({
+    db.database().ref('user/' + userId).update({
       address: address,
       date: date
     });
