@@ -5,7 +5,7 @@ const db = require('../../firebaseConfig');
 
 const event_add = (owner,name,desc,max,address,date,stuff) => {
     db.auth()
-    db.database().ref('events/').push({
+    var newEvents =  db.database().ref('events/').push({
         eventOwner: owner,
         eventName: name,
         eventDesc: desc,
@@ -13,7 +13,18 @@ const event_add = (owner,name,desc,max,address,date,stuff) => {
         eventAdress: address,
         eventDate: date,
         eventStuff: stuff
-    });
+    }).getKey();
+    var obj;
+    db.database().ref('user/' + owner).once('value', (snapshot) => {
+        obj=snapshot.val().list_owner;
+        obj.push(newEvents)
+        db.database().ref('user/' + owner).update({
+            list_owner: obj
+        })
+    })
+
+    //console.log(obj); 
+   
 }
 
 module.exports = (req, res) => {

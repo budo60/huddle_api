@@ -11,6 +11,11 @@ const signup = (mail,pass,username) => {
             const userId = db.auth().currentUser.uid;
             db.database().ref('user/' + userId).set({
             username: username,
+            address:null,
+            date: null,
+            list_part:null,
+            list_owner:null
+
             });
         })
         .catch(error => console.log(error.message))

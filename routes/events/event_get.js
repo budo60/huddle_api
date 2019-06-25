@@ -4,18 +4,25 @@ const db = require('../../firebaseConfig');
 //console.log(db, 'ddbb');
 
 
-const getData = () => {
-    //console.log("bla");
-    let result="";
-    let myTable = db.database().ref('events');
-    myTable.on('value', function(snapshot) {
-        // console.log(snapshot.val())
-        result = snapshot.val()
-    });
-    return result
+function getData (){
+   // let obj = "";
+    try{
+        return db.database().ref('events').once("value", (snapshot) => {
+            return snapshot.val();
+        });
+    }catch(error){
+        console.log("ERROR => ",error);
+    }
 }
 
+    // var obj;
+    //     await db.database().ref('events').once('value').then((snapshot) => {
+    //         obj = snapshot.val();
+    //     });
+
 module.exports = (req, res) => {
-    console.log(getData())
-    res.send(getData())
+    return (async function(){
+        const obj = await getData();
+        res.send(obj)
+    })()
  };
