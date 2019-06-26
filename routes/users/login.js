@@ -11,8 +11,6 @@ async function log (login,pass){
     }
 }
 
-
-
 module.exports = (req, res) => {
     return (async function(){
         var login = req.body.login,
@@ -21,6 +19,7 @@ module.exports = (req, res) => {
         let db_data;
 
         let user = {
+            uid: '',
             username: '',
             email: '',
             address: '',
@@ -30,6 +29,7 @@ module.exports = (req, res) => {
         
         await db.database().ref('user/' + obj.uid).once('value').then((snapshot) => {
             db_data = snapshot.val();
+            user.uid = obj.uid
             user.username = db_data.username != null ? db_data.username : obj.displayName
             user.email = obj.email
             user.address = db_data.address
